@@ -41,4 +41,31 @@
     var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
     msgs.forEach(function(m,i){ if(reduce) m.classList.add("show"); else setTimeout(function(){m.classList.add("show");}, 700+i*1250); });
   }
+
+  // theme switch
+  var tb=document.getElementById("themebtn");
+  if(tb) tb.addEventListener("click",function(){
+    var cur=root.getAttribute("data-theme"); var nx=cur==="light"?"dark":"light";
+    root.setAttribute("data-theme",nx); try{localStorage.setItem("theme",nx);}catch(e){}
+  });
+
+  // glow follows the pointer on cards; gentle 3D tilt on mouse devices only
+  var fine=window.matchMedia&&matchMedia("(hover:hover) and (pointer:fine)").matches;
+  var noMotion=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".tile,.steps li,.post").forEach(function(el){
+    el.addEventListener("pointermove",function(e){
+      var r=el.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top;
+      el.style.setProperty("--mx",x+"px"); el.style.setProperty("--my",y+"px");
+      if(fine&&!noMotion&&el.classList.contains("tile")){
+        el.style.transform="perspective(900px) rotateX("+(((y/r.height)-.5)*-5)+"deg) rotateY("+(((x/r.width)-.5)*6)+"deg) translateY(-3px)";
+      }
+    });
+    el.addEventListener("pointerleave",function(){ el.style.transform=""; });
+  });
+
+  // sections fade in once
+  if("IntersectionObserver" in window && !noMotion){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){ if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);} });},{threshold:.08});
+    document.querySelectorAll("main section").forEach(function(s,i){ if(i>0){s.classList.add("reveal");io.observe(s);} });
+  }
 })();
