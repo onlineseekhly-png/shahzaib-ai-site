@@ -1,1 +1,1 @@
-window.SITE={githubUser:"onlineseekhly-png",appRepo:"ShahzaibAi",apkName:"ShahzaibAI.apk",email:"mrshahzaibofficial@gmail.com",version:"5.0",wa:"923045527095"};
+window.SITE={githubUser:"onlineseekhly-png",appRepo:"ShahzaibAi",apkName:"ShahzaibAI.apk",email:"mrshahzaibofficial@gmail.com",version:"5.2",wa:"923045527095"};

@@ -68,4 +68,15 @@
     var io=new IntersectionObserver(function(es){es.forEach(function(en){ if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);} });},{threshold:.08});
     document.querySelectorAll("main section").forEach(function(s,i){ if(i>0){s.classList.add("reveal");io.observe(s);} });
   }
+
+  // release details (size, date) from GitHub, fills the download card
+  var sz=document.getElementById("dl-size"), dt=document.getElementById("dl-date");
+  if((sz||dt) && user && window.fetch){
+    fetch("https://api.github.com/repos/"+user+"/"+C.appRepo+"/releases/latest").then(function(r){return r.ok?r.json():null;}).then(function(j){
+      if(!j){ if(sz)sz.textContent="-"; if(dt)dt.textContent="-"; return; }
+      var a=(j.assets||[]).filter(function(x){return x.name===C.apkName;})[0];
+      if(sz) sz.textContent=a?(a.size/1048576).toFixed(1)+" MB":"-";
+      if(dt) dt.textContent=new Date(j.published_at).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
+    }).catch(function(){ if(sz)sz.textContent="-"; if(dt)dt.textContent="-"; });
+  }
 })();
