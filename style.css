@@ -199,8 +199,8 @@ html:not(.js) .reveal{opacity:1;transform:none}
 .vcard{background:var(--card,rgba(255,255,255,.04));border:1px solid rgba(127,127,160,.25);border-radius:20px;padding:14px;text-align:center}
 .vcard video{width:100%;max-width:300px;aspect-ratio:9/20;border-radius:14px;background:#000;display:block;margin:0 auto}
 .vcard h3{margin:12px 0 4px;font-size:18px}.vcard p{margin:0;font-size:14px;opacity:.8}
-.fshots{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:22px}
-.fshots figure{margin:0;text-align:center}.fshots img{width:100%;max-width:260px;height:auto;border-radius:18px;box-shadow:0 20px 40px -18px rgba(0,0,0,.6)}
+.fshots{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:22px}
+.fshots figure{margin:0;text-align:center}.fshots img{width:100%;max-width:300px;height:auto;border-radius:18px;box-shadow:0 20px 40px -18px rgba(0,0,0,.6)}
 .fshots figcaption{margin-top:8px;font-size:14px;opacity:.85}
 .fshots .wide{grid-column:span 2}.fshots .wide img{max-width:520px}
 .me{float:right;margin:0 0 14px 20px;width:200px}.me img{width:100%;height:auto;border-radius:20px}
@@ -215,3 +215,8 @@ html:not(.js) .reveal{opacity:1;transform:none}
 .bugform{display:grid;gap:10px;max-width:520px;margin-top:14px}
 .bugform input,.bugform textarea{padding:11px;border-radius:10px;border:1px solid rgba(127,127,160,.4);background:transparent;color:inherit;font:inherit}
 .cmds{width:100%;border-collapse:collapse;margin:10px 0 24px}.cmds td{padding:9px 10px;border-bottom:1px solid rgba(127,127,160,.25);vertical-align:top}
+.mbtn{display:none;margin-left:auto;background:transparent;border:1px solid rgba(127,127,160,.4);color:inherit;border-radius:10px;width:42px;height:42px;font-size:20px;cursor:pointer}
+.mpanel{display:none;position:fixed;top:62px;left:0;right:0;z-index:60;background:rgba(10,15,31,.98);padding:10px 16px 18px;border-bottom:1px solid rgba(255,255,255,.12)}
+.mpanel.open{display:block}.mpanel a{display:block;padding:14px 4px;color:#fff;text-decoration:none;font-size:18px;border-bottom:1px solid rgba(255,255,255,.08)}
+@media (max-width:720px){.top nav>a.l{display:none}.mbtn{display:block}.top nav{overflow:visible}.top nav .themebtn,.top nav .langbtn{margin-left:6px}}
+:focus-visible{outline:3px solid #F5A700;outline-offset:2px}

@@ -26,3 +26,13 @@
     var body="App version: "+g("ver")+"\nAndroid / phone: "+g("phone")+"\n\nProblem:\n"+g("issue");
     location.href="mailto:"+(C.email||"")+"?subject="+encodeURIComponent("Shahzaib AI bug report")+"&body="+encodeURIComponent(body);});
 })();
+(function(){
+  var nav=document.querySelector(".top nav"); if(!nav) return;
+  var links=[["index.html#features","Features","خصوصیات"],["index.html#new","Videos","ویڈیوز"],["commands.html","Voice commands","کمانڈز"],["install.html","Install","انسٹال"],["blog.html","Blog","بلاگ"],["about.html","About","تعارف"],["install.html#bug","Contact / report a bug","رابطہ / مسئلہ بتائیں"]];
+  var b=document.createElement("button");b.className="mbtn";b.type="button";b.setAttribute("aria-label","Menu");b.setAttribute("aria-expanded","false");b.textContent="☰";
+  var p=document.createElement("div");p.className="mpanel";
+  p.innerHTML=links.map(function(l){return '<a href="'+l[0]+'"><span class="en" lang="en">'+l[1]+'</span><span class="ur" lang="ur" dir="rtl">'+l[2]+'</span></a>';}).join("");
+  var th=document.getElementById("themebtn"); nav.insertBefore(b,th||null); document.body.appendChild(p);
+  b.addEventListener("click",function(){var o=p.classList.toggle("open");b.setAttribute("aria-expanded",o);b.textContent=o?"✕":"☰";});
+  p.addEventListener("click",function(e){if(e.target.closest("a")){p.classList.remove("open");b.textContent="☰";}});
+})();
