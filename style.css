@@ -193,3 +193,25 @@ html:not(.js) .reveal{opacity:1;transform:none}
 .dlrow div{display:flex;flex-direction:column;gap:2px}
 .dlrow b{font-size:13px;font-weight:600;opacity:.75}
 .dlrow span{font-size:17px;font-weight:600}
+
+/* v55 additions */
+.vgrid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:22px}
+.vcard{background:var(--card,rgba(255,255,255,.04));border:1px solid rgba(127,127,160,.25);border-radius:20px;padding:14px;text-align:center}
+.vcard video{width:100%;max-width:300px;aspect-ratio:9/20;border-radius:14px;background:#000;display:block;margin:0 auto}
+.vcard h3{margin:12px 0 4px;font-size:18px}.vcard p{margin:0;font-size:14px;opacity:.8}
+.fshots{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:22px}
+.fshots figure{margin:0;text-align:center}.fshots img{width:100%;max-width:260px;height:auto;border-radius:18px;box-shadow:0 20px 40px -18px rgba(0,0,0,.6)}
+.fshots figcaption{margin-top:8px;font-size:14px;opacity:.85}
+.fshots .wide{grid-column:span 2}.fshots .wide img{max-width:520px}
+.me{float:right;margin:0 0 14px 20px;width:200px}.me img{width:100%;height:auto;border-radius:20px}
+[dir=rtl] .me{float:left;margin:0 20px 14px 0}
+.dlbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:10px;padding:10px 14px;background:rgba(10,15,31,.96);border-top:1px solid rgba(255,255,255,.12);align-items:center;justify-content:center}
+.dlbar a.btn{padding:11px 22px;font-size:16px}
+.dlbar small{color:#c8d2f0;font-size:12px}
+@media (max-width:720px){.dlbar.on{display:flex}body{padding-bottom:70px}}
+.wafab{position:fixed;right:14px;bottom:84px;z-index:49;width:52px;height:52px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.4);text-decoration:none}
+.wafab svg{width:28px;height:28px;fill:#fff}
+@media (min-width:721px){.wafab{bottom:20px}}
+.bugform{display:grid;gap:10px;max-width:520px;margin-top:14px}
+.bugform input,.bugform textarea{padding:11px;border-radius:10px;border:1px solid rgba(127,127,160,.4);background:transparent;color:inherit;font:inherit}
+.cmds{width:100%;border-collapse:collapse;margin:10px 0 24px}.cmds td{padding:9px 10px;border-bottom:1px solid rgba(127,127,160,.25);vertical-align:top}
