@@ -36,3 +36,27 @@
   b.addEventListener("click",function(){var o=p.classList.toggle("open");b.setAttribute("aria-expanded",o);b.textContent=o?"✕":"☰";});
   p.addEventListener("click",function(e){if(e.target.closest("a")){p.classList.remove("open");b.textContent="☰";}});
 })();
+(function(){
+  var C=window.SITE||{};
+  document.querySelectorAll("[data-size]").forEach(function(e){e.textContent=C.apkSize||""});
+  document.querySelectorAll("[data-date]").forEach(function(e){e.textContent=C.apkDate||""});
+  document.querySelectorAll("[data-sha]").forEach(function(e){e.textContent=C.apkSha||""});
+  var cp=document.getElementById("shacopy"); if(cp) cp.addEventListener("click",function(){try{navigator.clipboard.writeText(C.apkSha||"");cp.textContent="✓"}catch(e){}});
+  // scroll reveal
+  var rv=document.querySelectorAll(".rv");
+  if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{rootMargin:"0px 0px -8% 0px"});rv.forEach(function(e){io.observe(e)});setTimeout(function(){rv.forEach(function(e){e.classList.add("in")})},2500);}
+  else rv.forEach(function(e){e.classList.add("in")});
+  // Urdu voice demo (device text-to-speech)
+  var pb=document.getElementById("vplay"); if(!pb) return;
+  var note=document.getElementById("vnote"), chat=document.getElementById("vchat"), txt=document.getElementById("vtext");
+  function urVoice(){var v=(window.speechSynthesis&&speechSynthesis.getVoices())||[];for(var i=0;i<v.length;i++){if(/^ur/i.test(v[i].lang))return v[i]}return null}
+  if(!window.speechSynthesis){pb.disabled=true;note.textContent="Your browser cannot read text aloud. Please watch the video.";return}
+  pb.addEventListener("click",function(){
+    speechSynthesis.cancel(); var v=urVoice();
+    if(!v){note.textContent="This browser has no Urdu voice installed. Please watch the video, or open this page in Chrome on Android.";return}
+    var u=new SpeechSynthesisUtterance(txt.textContent); u.voice=v; u.lang=v.lang; u.rate=.95;
+    u.onstart=function(){chat.classList.add("speaking")}; u.onend=u.onerror=function(){chat.classList.remove("speaking")};
+    speechSynthesis.speak(u);
+  });
+  if(speechSynthesis.onvoiceschanged!==undefined) speechSynthesis.onvoiceschanged=function(){};
+})();

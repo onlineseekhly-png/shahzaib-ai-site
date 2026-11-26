@@ -12,7 +12,7 @@
     if(C.email && e.tagName==="A") e.href="mailto:"+C.email;
   });
   document.querySelectorAll("[data-wa]").forEach(function(e){ if(C.wa){e.hidden=false;e.href="https://wa.me/"+String(C.wa).replace(/\D/g,"");} });
-  var c=document.getElementById("canon"); if(c) c.href=location.origin+location.pathname;
+  
 
   // language switch (English first for search engines, Urdu one tap away)
   var root=document.documentElement, btn=document.getElementById("langbtn");

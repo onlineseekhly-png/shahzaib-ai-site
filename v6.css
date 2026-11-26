@@ -1,0 +1,71 @@
+/* v6: premium layer on top of style.css */
+body{background-image:radial-gradient(1000px 560px at 80% -8%,rgba(139,92,246,.28),transparent 60%),radial-gradient(800px 480px at -8% 22%,rgba(34,211,238,.14),transparent 60%),radial-gradient(700px 500px at 60% 70%,rgba(236,72,153,.08),transparent 60%)}
+.top{border-bottom-color:transparent;box-shadow:0 1px 0 var(--cardb)}
+.top a.l{font-weight:500}
+.logo span.latin{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .wrap{padding-top:48px;padding-bottom:30px;gap:40px}
+.hero h1{font-size:clamp(46px,7.4vw,88px);letter-spacing:-.035em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.chips li{font-size:13px;padding:3px 12px;border-radius:999px;background:var(--soft);border:1px solid var(--cardb);color:var(--muted);line-height:1.8}
+.btn.big{padding:15px 32px;font-size:18px}
+.btn.play{display:inline-flex;align-items:center;gap:10px}
+.btn.play svg{width:18px;height:18px;fill:currentColor}
+/* phone trio in hero */
+.trio{position:relative;justify-self:center;width:min(100%,470px);aspect-ratio:1/1.12}
+.trio .orb{width:78%;top:50%;opacity:.9}
+.trio .dev{position:absolute;width:42%;z-index:2;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.trio .dev:nth-child(2){left:0;top:12%;transform:rotate(-7deg)}
+.trio .dev:nth-child(3){left:29%;top:0;transform:none;z-index:3;width:44%}
+.trio .dev:nth-child(4){right:0;top:14%;transform:rotate(7deg)}
+.trio:hover .dev:nth-child(2){transform:rotate(-10deg) translateX(-8px)}.trio:hover .dev:nth-child(4){transform:rotate(10deg) translateX(8px)}
+.trio .dev img{width:100%;height:auto;display:block}
+/* generic section heads */
+.eyebrow{display:inline-block;font-size:13px;color:var(--cy);font-weight:600;margin-bottom:10px;padding:2px 12px;border:1px solid var(--cardb);border-radius:999px;background:var(--soft)}
+section>h2{font-size:clamp(30px,4.4vw,48px);letter-spacing:-.03em}
+.sub{max-width:62ch;color:var(--muted)}
+/* voice demo */
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px;align-items:stretch}
+.chat{padding:22px;border-radius:28px;display:flex;flex-direction:column;gap:12px;background:var(--card);border:1px solid var(--cardb);backdrop-filter:blur(14px)}
+.bub{max-width:88%;padding:12px 16px;border-radius:18px;font-size:16px;line-height:1.9;font-family:"Noto Nastaliq Urdu","Noto Naskh Arabic",serif}
+.bub.me{align-self:flex-end;background:var(--grad);color:#fff;border-end-end-radius:4px}
+.bub.ai{align-self:flex-start;background:var(--soft);border:1px solid var(--cardb);border-end-start-radius:4px}
+.bub small{display:block;font:12px "Instrument Sans",sans-serif;opacity:.7;margin-top:2px}
+.vbar{display:flex;align-items:center;gap:14px;margin-top:auto;flex-wrap:wrap}
+.vwave{display:flex;gap:3px;align-items:center;height:34px}.vwave i{width:4px;height:6px;border-radius:3px;background:var(--grad);display:block}
+.speaking .vwave i{animation:wv2 .9s ease-in-out infinite}.speaking .vwave i:nth-child(2n){animation-delay:.15s}.speaking .vwave i:nth-child(3n){animation-delay:.3s}
+@keyframes wv2{0%,100%{height:6px}50%{height:30px}}
+.vnote{font-size:13px;color:var(--muted)}
+.vvid{display:flex;align-items:center;justify-content:center;border-radius:28px;padding:16px;background:var(--card);border:1px solid var(--cardb)}
+.vvid video{width:100%;max-width:290px;border-radius:18px;aspect-ratio:9/20;background:#000}
+/* showcase strip */
+.strip{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 22px 30px;margin:0 -22px;scrollbar-width:thin}
+.strip figure{flex:0 0 min(62vw,250px);margin:0;scroll-snap-align:center;text-align:center}
+.strip .dev{margin:0 auto}
+.strip figcaption{margin-top:14px;font-size:15px;color:var(--muted)}
+.strip .dev img{width:100%;height:auto;display:block}
+/* download */
+.dl{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-top:24px}
+.dlcard{padding:30px;border-radius:30px;background:linear-gradient(140deg,rgba(34,211,238,.14),rgba(139,92,246,.22));border:1px solid var(--cardb);backdrop-filter:blur(14px)}
+.dlcard h3{font-size:28px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+.facts div{background:var(--soft);border:1px solid var(--cardb);border-radius:16px;padding:10px 14px}
+.facts b{display:block;font-size:12px;color:var(--muted);font-weight:500}
+.facts span{font-size:18px;font-weight:700}
+.sha{display:block;word-break:break-all;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;background:rgba(0,0,0,.28);color:#d6e2ff;padding:10px 12px;border-radius:12px;margin-top:6px}
+:root[data-theme=light] .sha{background:rgba(20,30,80,.08);color:#1c2760}
+.dlside{padding:26px;border-radius:30px;background:var(--card);border:1px solid var(--cardb)}
+.dlside ul{margin:10px 0 0;padding-inline-start:20px;color:var(--muted)}
+.copyb{margin-top:8px;background:var(--soft);border:1px solid var(--cardb);color:var(--text);border-radius:999px;padding:3px 14px;font:inherit;font-size:13px;cursor:pointer}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.js .rv.in{opacity:1;transform:none}
+@media (max-width:860px){
+ .hero .wrap{grid-template-columns:1fr;text-align:start}
+ .trio{order:-1;width:min(88%,380px)}
+ .demo,.dl{grid-template-columns:1fr}
+ .btn.big{width:100%;text-align:center;justify-content:center}.btns{flex-direction:column}
+}
+@media (min-width:861px) and (max-width:1100px){.bento{grid-template-columns:repeat(4,1fr)}}
+.demo{align-items:center}
+.top a.navdl{background:var(--grad);color:#fff;font-weight:600;margin-inline-start:6px}
+.top a.navdl:hover{color:#fff;filter:brightness(1.1)}
+@media (max-width:720px){.top nav>a.navdl{display:none}}
