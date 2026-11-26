@@ -1,1 +1,1 @@
-window.SITE={githubUser:"onlineseekhly-png",appRepo:"ShahzaibAi",apkFile:"ShahzaibAI.apk",email:"mrshahzaibofficial@gmail.com",version:"5.4.1",wa:"923045527095",goatcounter:"",apkSize:"1.5 MB",apkDate:"26 Nov 2026",apkSha:"f3e3d8352541f1002446c73b7082e39d0f45d1016fa7b1a68dc2088acb5f7b24"};
+window.SITE={githubUser:"onlineseekhly-png",appRepo:"ShahzaibAi",apkFile:"ShahzaibAI.apk",email:"mrshahzaibofficial@gmail.com",version:"5.5",wa:"923045527095",goatcounter:"",apkSize:"1.5 MB",apkDate:"26 Nov 2026",apkSha:"3b6fc519e9901c417a79e250b4ba0f1213a7ec2f2666f6912e1c19de30b926fa"};
