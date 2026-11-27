@@ -4,7 +4,7 @@
   // download bar (mobile) + whatsapp help
   if(!/install\.html$/.test(location.pathname)){
     var b=document.createElement("div"); b.className="dlbar on";
-    b.innerHTML='<a class="btn" href="'+(C.apkFile||"ShahzaibAI.apk")+'" data-track="download">'+two("Download free APK","مفت APK ڈاؤن لوڈ")+'</a><small>v'+(C.version||"")+' · '+(C.apkSize||"")+'</small>';
+    b.innerHTML='<a class="btn" href="'+(C.apkFile||"https://github.com/onlineseekhly-png/ShahzaibAi/releases/download/latest/ShahzaibAI.apk")+'" data-track="download">'+two("Download free APK","مفت APK ڈاؤن لوڈ")+'</a><small>v'+(C.version||"")+' · '+(C.apkSize||"")+'</small>';
     document.body.appendChild(b);
   }
   if(C.wa){var w=document.createElement("a");w.className="wafab";w.target="_blank";w.rel="noopener";w.setAttribute("aria-label","WhatsApp help");
