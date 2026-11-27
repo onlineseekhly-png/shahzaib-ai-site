@@ -2,7 +2,7 @@
   var C = window.SITE || {};
   var user = C.githubUser;
   if(!user && /\.github\.io$/.test(location.hostname)) user = location.hostname.split(".")[0];
-  var apk = C.apkFile || "ShahzaibAI.apk";
+  var apk = C.apkFile || "https://github.com/onlineseekhly-png/ShahzaibAi/releases/download/latest/ShahzaibAI.apk";
   var rel = "changelog.html";
   document.querySelectorAll("[data-apk]").forEach(function(a){a.href=apk;});
   document.querySelectorAll("[data-releases]").forEach(function(a){a.href=rel;});
